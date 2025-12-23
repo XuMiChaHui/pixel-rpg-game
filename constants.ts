@@ -5,14 +5,17 @@ export const TILE_SIZE = 32;
 export const MAP_WIDTH = 30;
 export const MAP_HEIGHT = 20;
 
+export const INITIAL_PLAYER_PORTRAIT_PROMPT = "Japanese RPG hero, red hair, messy energetic hairstyle, young male adventurer, fantasy light armor, confident smile, anime style portrait, masterpiece, high resolution, SOLID BRIGHT GREEN BACKGROUND";
+
 export const SKILLS: Record<string, Skill> = {
     'slash': { id: 'slash', name: '橫掃斬', type: 'physical', power: 90, cost: 0, description: '快速的橫向斬擊。', animation: 'slash', gestureId: 'LINE' },
     'braver': { id: 'braver', name: '重力斬', type: 'physical', power: 280, cost: 0, description: '勢大力沉的 V 字斬。', animation: 'slash', gestureId: 'V_SHAPE' },
     'fireball': { id: 'fireball', name: '爆裂彈', type: 'magic', power: 200, cost: 0, description: '召喚三角形火球。', animation: 'fire', gestureId: 'TRIANGLE' },
-    'heal': { id: 'heal', name: '治癒十字', type: 'heal', power: 150, cost: 0, description: '繪製十字架，引導生命能量。', animation: 'sparkle', gestureId: 'CIRCLE' }, // 內部邏輯將識別 CROSS
+    'heal': { id: 'heal', name: '治癒十字', type: 'heal', power: 150, cost: 0, description: '繪製十字架，引導生命能量。', animation: 'sparkle', gestureId: 'CIRCLE' },
     'veteran_strike': { id: 'veteran_strike', name: '老兵劍術', type: 'physical', power: 45, cost: 0, description: '老練的重擊。', animation: 'slash' },
 };
 
+// ... (其餘地圖定義保持不變)
 const FOREST_MAP: number[][] = Array(MAP_HEIGHT).fill(0).map(() => Array(MAP_WIDTH).fill(TileType.GRASS));
 
 for(let y=0; y<MAP_HEIGHT; y++) {
@@ -124,7 +127,7 @@ export const INITIAL_NPCS: NPC[] = [
     mapId: 'FOREST',
     pos: { x: 15, y: 8 }, 
     color: '#78350f', 
-    description: 'A retired veteran soldier, grey hair, brown veteran cloak.',
+    description: "Old veteran soldier, grey hair and beard, brown scout cloak, wise expression, JRPG style portrait, SOLID BRIGHT GREEN BACKGROUND",
     persona: `你是「張先生」，退休斥候。你在森林守護村莊。`,
     hp: 2500, maxHp: 2500, skills: ['veteran_strike']
   },
@@ -134,7 +137,7 @@ export const INITIAL_NPCS: NPC[] = [
     mapId: 'HOUSE',
     pos: { x: 16, y: 7 }, 
     color: '#ec4899', 
-    description: 'A cute girl with pink twin-tails.',
+    description: "Cute anime girl, pink twin-tails, fantasy villager clothes, friendly smile, JRPG style portrait, SOLID BRIGHT GREEN BACKGROUND",
     persona: `你是「小林」，主角的青梅竹馬。`,
     hp: 500, maxHp: 500, skills: ['heal']
   }
