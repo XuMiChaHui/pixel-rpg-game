@@ -1,0 +1,7 @@
+{
+  "name": "Pixel RPG AI Chat",
+  "description": "A retro-style pixel art RPG where you can converse with an NPC powered by Gemini AI in Chinese.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
